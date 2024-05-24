@@ -1,0 +1,20 @@
+
+`	java:S112)"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ
+`	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ
+`	java:S1127"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ
+`	java:S112C"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ
+`	java:S112M"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ
+]	java:S125"<This block of commented-out lines of code should be removed.(ε±·³ώÿÿÿÿ8ϊΣοµω1
+a
+java:S2147*"DCombine this catch with the one at line 39, which has the same body.(Ι®£8„Τοµω1
+t
+java:S2142'"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(δ Ή€
+]	java:S125#"<This block of commented-out lines of code should be removed.(ΩΖΗΐωÿÿÿÿ8…Τοµω1
+]	java:S125("<This block of commented-out lines of code should be removed.(ώρ•Ύψÿÿÿÿ8‡Τοµω1
+X	java:S125+"<This block of commented-out lines of code should be removed.(τ•α8Τοµω1
+X	java:S1256"<This block of commented-out lines of code should be removed.(½©μΏ8Τοµω1
+]	java:S125@"<This block of commented-out lines of code should be removed.(ΔΪ„ψÿÿÿÿ8Τοµω1
+X	java:S125B"<This block of commented-out lines of code should be removed.(“»8Τοµω1
+X	java:S125L"<This block of commented-out lines of code should be removed.(θΥ»ό8Τοµω1
+]	java:S125Z"<This block of commented-out lines of code should be removed.(λ‰ώΠϊÿÿÿÿ8‘Τοµω1
+X	java:S125j"<This block of commented-out lines of code should be removed.(Σ—ΏΘ8—Τοµω1

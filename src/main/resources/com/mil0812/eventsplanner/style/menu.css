@@ -1,0 +1,28 @@
+.main-pane {
+  -fx-background-color: #e9dcd8;
+}
+
+label {
+  -fx-font-family: "beer money";
+  -fx-font-size: 60.0;
+  -fx-text-fill: #369681;
+}
+
+.button_custom {
+  -fx-max-height: Infinity;
+  -fx-max-width: Infinity;
+  -fx-hgrow: always;
+  -fx-cursor: hand;
+
+  -fx-alignment: bottom-center;
+  -fx-content-display: top;
+  -fx-font-family: "beer money";
+  -fx-font-size: 12.0;
+}
+
+.button_custom:hover {
+  -fx-background-color: #f4fefb;
+}
+
+.side-panel {
+}

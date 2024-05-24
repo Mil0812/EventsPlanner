@@ -1,0 +1,19 @@
+.root {
+  -fx-font-family: "beer money";
+}
+
+.primary-bg-color {
+  -fx-background-color: #219F85;
+}
+
+.secondary-bg-color {
+  -fx-background-color: #927168;
+}
+
+.light-bg-color {
+  -fx-background-color: #E9DCD8;
+}
+
+.dark-bg-color {
+  -fx-background-color: #282A34;
+}

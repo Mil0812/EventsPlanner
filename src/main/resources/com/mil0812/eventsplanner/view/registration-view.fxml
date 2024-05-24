@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="922.0" style="-fx-background-color: #289F85;"
+  xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="com.mil0812.presentation.controllers.RegistrationPageController">
+  <children>
+    <AnchorPane layoutY="170.0" prefHeight="440.0" prefWidth="922.0"
+      style="-fx-background-color: #E9DCD8;">
+      <children>
+        <Button fx:id="signUpButton" layoutX="353.0" layoutY="361.0" mnemonicParsing="false"
+          prefHeight="51.0" prefWidth="215.0" style="-fx-background-color: #289F85;"
+          text="Зареєструватися" textFill="#282a34">
+          <font>
+            <Font name="beer money" size="25.0"/>
+          </font>
+          <cursor>
+            <Cursor fx:constant="HAND"/>
+          </cursor>
+        </Button>
+        <Label alignment="CENTER" layoutX="278.0" prefHeight="86.0" prefWidth="366.0"
+          text="Реєстрація" textFill="#282a34">
+          <font>
+            <Font name="beer money" size="45.0"/>
+          </font>
+        </Label>
+        <TextField fx:id="nameTextInput" layoutX="413.0" layoutY="92.0" prefHeight="45.0"
+          prefWidth="300.0">
+          <font>
+            <Font name="beer money" size="24.0"/>
+          </font>
+        </TextField>
+        <Label alignment="CENTER" layoutX="208.0" layoutY="98.0" prefHeight="35.0" prefWidth="204.0"
+          text="Введіть своє ім'я:" textFill="#282a34">
+          <font>
+            <Font name="beer money" size="25.0"/>
+          </font>
+        </Label>
+        <TextField fx:id="usernameTextInput" layoutX="413.0" layoutY="153.0" prefHeight="45.0"
+          prefWidth="300.0">
+          <font>
+            <Font name="beer money" size="24.0"/>
+          </font>
+        </TextField>
+        <Label alignment="CENTER" layoutX="208.0" layoutY="159.0" prefHeight="35.0"
+          prefWidth="204.0" text="Ваш логін:" textFill="#282a34">
+          <font>
+            <Font name="beer money" size="25.0"/>
+          </font>
+        </Label>
+        <Label alignment="CENTER" layoutX="208.0" layoutY="219.0" prefHeight="35.0"
+          prefWidth="204.0" text="Пароль:" textFill="#282a34">
+          <font>
+            <Font name="beer money" size="25.0"/>
+          </font>
+        </Label>
+        <PasswordField fx:id="passwordInput" layoutX="413.0" layoutY="214.0" prefHeight="45.0"
+          prefWidth="300.0"/>
+        <Label alignment="CENTER" layoutX="208.0" layoutY="276.0" prefHeight="35.0"
+          prefWidth="204.0" text="Підтвердіть пароль:" textFill="#282a34">
+          <font>
+            <Font name="beer money" size="25.0"/>
+          </font>
+        </Label>
+        <PasswordField fx:id="passwordConfirmationInput" layoutX="414.0" layoutY="271.0"
+          prefHeight="45.0" prefWidth="300.0"/>
+        <Text fx:id="usernameErrors" fill="#6e0000" layoutX="717.0" layoutY="159.0"
+          strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="JUSTIFY" wrappingWidth="177.0">
+          <font>
+            <Font name="Arial" size="10.0"/>
+          </font>
+        </Text>
+        <Text fx:id="passwordErrors" fill="#6e0000" layoutX="730.0" layoutY="241.0"
+          strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="JUSTIFY" wrappingWidth="177.0">
+          <font>
+            <Font name="Arial" size="10.0"/>
+          </font>
+        </Text>
+        <Text fx:id="passwordConfirmErrors" fill="#6e0000" layoutX="730.0" layoutY="296.0"
+          strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="JUSTIFY"
+          wrappingWidth="177.3367919921875">
+          <font>
+            <Font name="Arial" size="10.0"/>
+          </font>
+        </Text>
+        <Text fx:id="allFieldsErrors" fill="#6e0000" layoutX="372.0" layoutY="343.0"
+          strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="JUSTIFY"
+          wrappingWidth="177.3367919921875">
+          <font>
+            <Font name="Arial" size="10.0"/>
+          </font>
+        </Text>
+      </children>
+    </AnchorPane>
+    <Label layoutX="288.0" layoutY="39.0" prefHeight="102.0" prefWidth="366.0" text="EVENTS PLANNER"
+      textFill="WHITE">
+      <font>
+        <Font name="beer money" size="55.0"/>
+      </font>
+    </Label>
+  </children>
+</AnchorPane>

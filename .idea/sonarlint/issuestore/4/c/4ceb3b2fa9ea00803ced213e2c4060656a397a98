@@ -1,0 +1,19 @@
+
+D
+java:S37401"/Provide the parametrized type for this generic.(ÌşO
+E
+java:S37402"/Provide the parametrized type for this generic.(´†¶
+D
+java:S3740Z"/Provide the parametrized type for this generic.(áŸ¢f
+J
+java:S3740["/Provide the parametrized type for this generic.(ÿÔùúüÿÿÿÿ
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+w
+java:S14502"aRemove the "passwordErrorsList" field and declare it as a local variable in the relevant methods.(´†¶
+v
+java:S14501"aRemove the "usernameErrorsList" field and declare it as a local variable in the relevant methods.(ÌşO
+W	java:S125†"<This block of commented-out lines of code should be removed.(õõâäùÿÿÿÿ
+W	java:S125”"<This block of commented-out lines of code should be removed.(éˆ€³ÿÿÿÿÿ
+>
+java:S10684"(Remove this unused "name" private field.(Ë¥¼
