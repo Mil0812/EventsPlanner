@@ -4,14 +4,131 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca43f16d-8bc0-4d5a-9ebe-97588b1083c5" name="Changes" comment="" />
+    <list default="true" id="ca43f16d-8bc0-4d5a-9ebe-97588b1083c5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/hs_err_pid13924.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid14004.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid14108.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid17712.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hs_err_pid6444.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/entity/impl/DayTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/entity/impl/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/impl/DayTaskRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/impl/EventRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/interfaces/DayTaskRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/interfaces/EventRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/mappers/impl/DayTaskRowMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/mappers/impl/EventRowMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/unit_of_work/impl/DayTaskUnitOfWork.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/unit_of_work/impl/EventUnitOfWork.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/utils/IdChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/6/0634d0522394767591433a0004ffa2e18029123b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/6/0634d0522394767591433a0004ffa2e18029123b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/7/077a4747de8b0e50c9adde7a8482ca2a930d2aa0" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/7/077a4747de8b0e50c9adde7a8482ca2a930d2aa0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/08b76d0374ad4e0b06fa98374ade88770ec75bcd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/08b76d0374ad4e0b06fa98374ade88770ec75bcd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1af348fdce70e4419f933fe92526bc439875b1ea" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1af348fdce70e4419f933fe92526bc439875b1ea" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/9/390673f5d3feceac61c5e49520a79680afb07a08" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/9/390673f5d3feceac61c5e49520a79680afb07a08" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/c/4ceb3b2fa9ea00803ced213e2c4060656a397a98" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/c/4ceb3b2fa9ea00803ced213e2c4060656a397a98" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/0/70b796a860ad4ad9e29b4161ae3230f3c99c94a3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/7188d3c77dfdd07a9134410eb344fbd43e88a6cf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/d/7dbc444f0b3b7d8959b28981429fe5e8c5418a3e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f6679aa41c626ecc676c9f81bea897e697fb54d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f6679aa41c626ecc676c9f81bea897e697fb54d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/1/a15ee632bde06bcc264a4c3d06fe66b872d8b441" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/ae1688dfb5b638d84c53c3d38e690bb04a56b931" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b3b8628f948a04070247a276f9e57700a77375b9" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b3b8628f948a04070247a276f9e57700a77375b9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/b/cbbc57fd4497ff8f2f7ef889edd1f6f234132dce" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d536ef523746932c0a4400b55d7bcc166365b95c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/6/d6fe97b1cdd4e49369410e0c76d51e061441136f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/0/70b796a860ad4ad9e29b4161ae3230f3c99c94a3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/1/7188d3c77dfdd07a9134410eb344fbd43e88a6cf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/d/7dbc444f0b3b7d8959b28981429fe5e8c5418a3e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/1/a15ee632bde06bcc264a4c3d06fe66b872d8b441" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/e/ae1688dfb5b638d84c53c3d38e690bb04a56b931" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/b/cbbc57fd4497ff8f2f7ef889edd1f6f234132dce" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/5/d536ef523746932c0a4400b55d7bcc166365b95c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/6/d6fe97b1cdd4e49369410e0c76d51e061441136f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/connection/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/connection/ConnectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/connection/DatabaseInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/connection/DatabaseInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/connection/PropertyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/connection/PropertyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/entity/impl/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/entity/impl/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/exception/EntityNotFound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/exception/EntityNotFound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/exception/ErrorOnDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/exception/ErrorOnDelete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/exception/ErrorOnUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/exception/ErrorOnUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/GenericJdbcRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/GenericJdbcRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/impl/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/interfaces/TableTitles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/interfaces/TableTitles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/interfaces/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/interfaces/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/mappers/RowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/mappers/RowMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/mappers/impl/UserRowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/repository/mappers/impl/UserRowMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/unit_of_work/GeneralUnitOfWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/unit_of_work/GeneralUnitOfWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/unit_of_work/PersistenceContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/unit_of_work/UnitActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/unit_of_work/UnitActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/unit_of_work/UnitOfWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/unit_of_work/UnitOfWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/unit_of_work/impl/UserUnitOfWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/persistence/unit_of_work/impl/UserUnitOfWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/SpringFXMLLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/SpringFXMLLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/CalendarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/CalendarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/DayTasksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/DayTasksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/EnterPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/EnterPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/MainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/ProfileViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/ProfileViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/RegistrationPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/RegistrationPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/utils/AlertUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/utils/AlertUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/utils/CurrentUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/utils/CurrentUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/utils/SceneSwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/utils/SceneSwitcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/style/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/style/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/style/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/view/calendar-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/view/calendar-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/view/day-tasks-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/view/day-tasks-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/view/enter-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/view/enter-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/view/event-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/view/event-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/view/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/view/main-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/view/profile-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/view/profile-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/view/registration-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mil0812/eventsplanner/view/registration-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ddl.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ddl.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dml.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dml.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/events_planner.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/events_planner.db" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindBugs-IDEA-Workspace">
+    <toolWindowEditorPreview>false</toolWindowEditorPreview>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Mil0812&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="ba912651-1cc3-4a4d-bbfd-4dee5db3af45" />
+        <option name="url" value="https://github.com/Mil0812/EventsPlanner.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -20,26 +137,89 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2gjiqABlVpMqRs7dwySdCvXf7Iq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainClass.executor&quot;: &quot;Run&quot;,
+    &quot;Database Script.ddl.sql.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.EventsPlanner [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.EventsPlanner [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/IdeaProjects/networking-lr-9&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;RunConfigurationTargetLRU&quot;: [
+      &quot;330dec71-61f8-4c93-8b72-0f03b645983c&quot;
+    ]
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\IdeaProjects\EventsPlanner\src\main\resources\com\mil0812\eventsplanner\images\event_options" />
+      <recent name="C:\Users\admin\IdeaProjects\EventsPlanner\src\main\resources\com\mil0812\eventsplanner\images" />
+      <recent name="C:\Users\admin\IdeaProjects\EventsPlanner\src\main\java\com\mil0812\eventsplanner\persistence\unitOfWork" />
+      <recent name="C:\Users\admin\IdeaProjects\EventsPlanner\src\main\java\com\mil0812\eventsplanner\persistence\repository\interfaces" />
+      <recent name="C:\Users\admin\IdeaProjects\EventsPlanner\src\main\java\com\mil0812\eventsplanner\persistence\repository" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\IdeaProjects\EventsPlanner\src\main\resources\com\mil0812\eventsplanner" />
+      <recent name="C:\Users\admin\IdeaProjects\EventsPlanner\src\main\resources\com\mil0812\eventsplanner\view" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mil0812.eventsplanner.persistence.unitOfWork.impl" />
+      <recent name="com.mil0812.eventsplanner.persistence.repository.impl" />
+      <recent name="com.mil0812.eventsplanner.persistence.repository.mappers.impl" />
+      <recent name="com.mil0812.eventsplanner.persistence.repository.mappers" />
+      <recent name="com.mil0812.eventsplanner.persistence.entity.impl" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainClass">
+    <configuration name="MainClass" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.mil0812.eventsplanner.Main" />
+      <module name="EventsPlanner" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ddl.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/src/main/resources/ddl.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="330dec71-61f8-4c93-8b72-0f03b645983c" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.MainClass" />
+      <item itemvalue="Database Script.ddl.sql" />
+    </list>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -55,11 +235,72 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716217577125</updated>
-      <workItem from="1716217578287" duration="3000" />
+      <workItem from="1716217578287" duration="1866000" />
+      <workItem from="1716219456161" duration="14327000" />
+      <workItem from="1716265038635" duration="5849000" />
+      <workItem from="1716280506511" duration="33042000" />
+      <workItem from="1716349385707" duration="6852000" />
+      <workItem from="1716367124956" duration="4003000" />
+      <workItem from="1716378461383" duration="15173000" />
+      <workItem from="1716400259302" duration="16720000" />
+      <workItem from="1716447496746" duration="12814000" />
+      <workItem from="1716527205720" duration="218000" />
+      <workItem from="1716527449947" duration="19351000" />
+      <workItem from="1716570547251" duration="41537000" />
+      <workItem from="1716655186048" duration="1959000" />
+      <workItem from="1716735784493" duration="3288000" />
+      <workItem from="1716741022898" duration="3407000" />
+      <workItem from="1716785194617" duration="701000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalAccessException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="com.mil0812.eventsplanner.persistence.exception.ErrorOnUpdate" package="com.mil0812.eventsplanner.persistence.exception" />
+          <option name="timeStamp" value="21" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/DayTasksController.java</url>
+          <line>169</line>
+          <option name="timeStamp" value="168" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/DayTasksController.java</url>
+          <line>170</line>
+          <option name="timeStamp" value="169" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/DayTasksController.java</url>
+          <line>171</line>
+          <option name="timeStamp" value="170" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/DayTasksController.java</url>
+          <line>172</line>
+          <option name="timeStamp" value="171" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mil0812/eventsplanner/presentation/controllers/DayTasksController.java</url>
+          <line>168</line>
+          <properties class="com.mil0812.eventsplanner.presentation.controllers.DayTasksController" method="getNodeByRowColumnIndex">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="167" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

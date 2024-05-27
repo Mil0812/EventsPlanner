@@ -2,13 +2,13 @@
   -fx-background-color: #e9dcd8;
 }
 
-label {
+.my-label {
   -fx-font-family: "beer money";
   -fx-font-size: 60.0;
   -fx-text-fill: #369681;
 }
 
-.button_custom {
+.button-custom {
   -fx-max-height: Infinity;
   -fx-max-width: Infinity;
   -fx-hgrow: always;
@@ -20,9 +20,17 @@ label {
   -fx-font-size: 12.0;
 }
 
-.button_custom:hover {
+.button-custom:hover {
   -fx-background-color: #f4fefb;
 }
 
+.button-custom .image-view {
+  -fx-fit-width: 20px;
+  -fx-fit-height: 20px;
+}
+
 .side-panel {
+  -fx-background-color: #f4fefb;
+  -fx-border-color: #369681;
+  -fx-border-width: 3px;
 }

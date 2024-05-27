@@ -1,10 +1,8 @@
-package com.mil0812.persistence.connection;
+package com.mil0812.eventsplanner.persistence.connection;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;

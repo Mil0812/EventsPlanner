@@ -1,4 +1,4 @@
-package com.mil0812.eventsplanner.persistence.unitOfWork;
+package com.mil0812.eventsplanner.persistence.unit_of_work;
 
 import com.mil0812.eventsplanner.persistence.entity.Entity;
 import com.mil0812.eventsplanner.persistence.exception.EntityNotFound;
@@ -34,6 +34,7 @@ public class GeneralUnitOfWork<T extends Entity> implements UnitOfWork<T> {
   @Override
   public void registerNew(T entity) {
     logger.info("Реєстрація сутності по id {} для вставки", entity.id());
+    logger.info(STR."~entity = \{entity}");
     register(entity, UnitActions.INSERT);
   }
 
@@ -71,6 +72,7 @@ public class GeneralUnitOfWork<T extends Entity> implements UnitOfWork<T> {
 
     entitiesToOperate.add(entity);
     context.put(operation, entitiesToOperate);
+    logger.info(STR."~ context putted operation \{operation}");
   }
 
   /**
@@ -97,6 +99,7 @@ public class GeneralUnitOfWork<T extends Entity> implements UnitOfWork<T> {
 
   private void commitInsert() {
     var entitiesToBeInserted = context.get(UnitActions.INSERT);
+    logger.info(STR."~ entities to be inserted = \{entitiesToBeInserted}");
     entities = repository.save(entitiesToBeInserted);
   }
 

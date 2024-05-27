@@ -1,24 +1,18 @@
 package com.mil0812.eventsplanner.presentation.controllers;
 
-import static java.lang.System.out;
-
 import com.mil0812.eventsplanner.persistence.connection.ConnectionManager;
 import com.mil0812.eventsplanner.persistence.entity.impl.User;
-import com.mil0812.eventsplanner.persistence.repository.mappers.impl.UserRowMapper;
 import com.mil0812.eventsplanner.persistence.unit_of_work.impl.UserUnitOfWork;
-import java.io.FileNotFoundException;
+import com.mil0812.eventsplanner.presentation.utils.AlertUtil;
+import com.mil0812.eventsplanner.presentation.utils.CurrentUser;
+import com.mil0812.eventsplanner.presentation.utils.SceneSwitcher;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -32,6 +26,7 @@ import org.springframework.stereotype.Component;
 public class RegistrationPageController {
 
   private final UserUnitOfWork userUnitOfWork;
+  private final SceneSwitcher sceneSwitcher;
 
   @FXML
   private Button signUpButton;
@@ -72,14 +67,14 @@ public class RegistrationPageController {
   private byte[] imageData;
   private static final Logger logger = LoggerFactory.getLogger(RegistrationPageController.class);
 
-  private final ConnectionManager connectionManager;
 
 
   @Autowired
-  public RegistrationPageController(UserUnitOfWork userUnitOfWork,
+  public RegistrationPageController(UserUnitOfWork userUnitOfWork, SceneSwitcher sceneSwitcher,
       ConnectionManager connectionManager) {
     this.userUnitOfWork = userUnitOfWork;
-    this.connectionManager = connectionManager;
+    this.sceneSwitcher = sceneSwitcher;
+    imageData = defaultImageInBytes();
   }
 
   @FXML
@@ -122,22 +117,6 @@ public class RegistrationPageController {
 
   private void signUpNewUser() {
 
-    String imagePath = "/com/mil0812/eventsplanner/images/avatar.png";
-
-    try {
-      try (InputStream inputStream = getClass().getResourceAsStream(imagePath)) {
-        if (inputStream == null) {
-          throw new FileNotFoundException("Файл за вказаним шляхом не знайдено...");
-        }
-
-        byte[] fileBytes = inputStream.readAllBytes();
-        imageData = inputStream.readAllBytes();
-      }
-
-    } catch (IOException e) {
-      logger.error(STR."Помилка зчитування байтів із зображення... \{e}");
-    }
-
     validateUser();
     checkAllFields();
 
@@ -146,22 +125,49 @@ public class RegistrationPageController {
     }
 
     if (successValidation) {
-      out.println("Succeed!");
-      Alert alert = new Alert(AlertType.INFORMATION);
-      alert.setTitle("Успішна реєстрація");
-      alert.setHeaderText(null);
-      alert.setContentText("Ви успішно зареєстровані!");
-      alert.showAndWait();
 
-      User user = new User(username, password, firstName, imageData);
+      //Registration
+      User user = new User(null, username, password, firstName, imageData);
       userUnitOfWork.registerNew(user);
       userUnitOfWork.commit();
+
+      //Setting current user for other pages
+      CurrentUser.getInstance().setCurrentUser(user);
+
+      //Switching
+      signUpButton.getScene().getWindow().hide();
+      AlertUtil.showInfoAlert("Ви успішно зареєстровані!");
+      sceneSwitcher.switchScene
+          ("/com/mil0812/eventsplanner/view/enter-view.fxml",
+              "/com/mil0812/eventsplanner/style/menu.css");
+
     } else {
-      Alert alert = new Alert(AlertType.ERROR);
-      alert.setTitle("Помилка при реєстрація");
-      alert.setHeaderText(null);
-      alert.setContentText("Помилка... Перевірте, будь ласка, всі дані");
-      alert.showAndWait();
+      AlertUtil.showInfoAlert("Помилка при реєстрації...");
+    }
+  }
+
+  private byte[] readImage(File file){
+
+    try (FileInputStream fis = new FileInputStream(file)) {
+      byte[] data = new byte[(int) file.length()];
+      fis.read(data);
+      return data;
+    } catch (IOException e) {
+      logger.error(STR."Помилка зчитування байтів із зображення... \{e}");
+      return null;
+    }
+  }
+
+  private byte[] defaultImageInBytes() {
+    try (InputStream is = getClass().getResourceAsStream
+        ("/com/mil0812/eventsplanner/images/name.png")) {
+      if (is == null) {
+        throw new IOException("Дефолтне зображення не знайдено...");
+      }
+      return is.readAllBytes();
+    } catch (IOException e) {
+      e.printStackTrace();
+      return null;
     }
   }
 

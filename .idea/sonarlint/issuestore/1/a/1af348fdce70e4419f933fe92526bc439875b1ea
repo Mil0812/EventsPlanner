@@ -1,10 +1,0 @@
-
-g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ôö¢Çÿÿÿÿÿ8ÆÑñµù1
-g	java:S112""FDefine and throw a dedicated exception instead of using a generic one.(Ã˜‰¼øÿÿÿÿ8ÇÑñµù1
-X	java:S125"<This block of commented-out lines of code should be removed.(£¨Ç8éÑñµù1
-a
-java:S2147,"DCombine this catch with the one at line 42, which has the same body.(”ý¾8êÑñµù1
-X	java:S125&"<This block of commented-out lines of code should be removed.(€€‘8ñÑñµù1
-]	java:S125("<This block of commented-out lines of code should be removed.(ÞÕ»ëùÿÿÿÿ8ñÑñµù1
-X	java:S125+"<This block of commented-out lines of code should be removed.(ž§žˆ8ñÑñµù1
-]	java:S125-"<This block of commented-out lines of code should be removed.(«Ö‰áûÿÿÿÿ8òÑñµù1

@@ -1,4 +1,4 @@
-package com.mil0812.persistence.connection;
+package com.mil0812.eventsplanner.persistence.connection;
 
 import java.lang.reflect.Proxy;
 import java.sql.Connection;

@@ -1,19 +1,21 @@
 
-D
-java:S37401"/Provide the parametrized type for this generic.(ÌşO
-E
-java:S37402"/Provide the parametrized type for this generic.(´†¶
-D
-java:S3740Z"/Provide the parametrized type for this generic.(áŸ¢f
-J
-java:S3740["/Provide the parametrized type for this generic.(ÿÔùúüÿÿÿÿ
-X
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
-w
-java:S14502"aRemove the "passwordErrorsList" field and declare it as a local variable in the relevant methods.(´†¶
-v
-java:S14501"aRemove the "usernameErrorsList" field and declare it as a local variable in the relevant methods.(ÌşO
-W	java:S125†"<This block of commented-out lines of code should be removed.(õõâäùÿÿÿÿ
-W	java:S125”"<This block of commented-out lines of code should be removed.(éˆ€³ÿÿÿÿÿ
->
-java:S10684"(Remove this unused "name" private field.(Ë¥¼
+K
+java:S37401"/Provide the parametrized type for this generic.(ÌşO8ËÊƒáú1
+L
+java:S37402"/Provide the parametrized type for this generic.(´†¶8ËÊƒáú1
+K
+java:S3740S"/Provide the parametrized type for this generic.(áŸ¢f8ÌÊƒáú1
+Q
+java:S3740T"/Provide the parametrized type for this generic.(ÿÔùúüÿÿÿÿ8ÌÊƒáú1
+~
+java:S14502"aRemove the "passwordErrorsList" field and declare it as a local variable in the relevant methods.(´†¶8Ëƒáú1
+}
+java:S14501"aRemove the "usernameErrorsList" field and declare it as a local variable in the relevant methods.(ÌşO8‘Ëƒáú1
+P
+java:S1172m".Remove this unused method parameter "message".(õûèØûÿÿÿÿ8¤Ëƒáú1
+]
+java:S1128";Remove this unused import 'com.mil0812.eventsplanner.Main'.(˜œ˜øÿÿÿÿ8§Ëƒáú1
+s
+java:S1128"VRemove this unused import 'com.mil0812.eventsplanner.persistence.entity.impl.DayTask'.(®øœ8§Ëƒáú1
+M
+java:S1128"+Remove this unused import 'java.util.UUID'.(ÀãÄ£úÿÿÿÿ8§Ëƒáú1

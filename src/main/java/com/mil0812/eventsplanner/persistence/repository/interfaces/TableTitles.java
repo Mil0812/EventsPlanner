@@ -1,16 +1,10 @@
-package com.mil0812.persistence.repository.interfaces;
-
-import org.springframework.stereotype.Component;
+package com.mil0812.eventsplanner.persistence.repository.interfaces;
 
 public enum TableTitles {
   USERS("users"),
-  TEST("test"),
-  SECTION("section"),
-  TEST_TYPE("test_type"),
-  QUESTION("question"),
-  ANSWER("answer"),
-  RESULT("result"),
-  SECTION_TEST("section_test");
+  EVENT("my_events"),
+  DAY_TASK("day_task");
+
 
   private final String name;
 

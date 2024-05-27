@@ -1,24 +1,24 @@
 package com.mil0812.eventsplanner.presentation.controllers;
 
 import com.mil0812.eventsplanner.Main;
+import com.mil0812.eventsplanner.persistence.entity.impl.DayTask;
 import com.mil0812.eventsplanner.persistence.entity.impl.User;
 import com.mil0812.eventsplanner.persistence.repository.interfaces.UserRepository;
+import com.mil0812.eventsplanner.persistence.unit_of_work.impl.DayTaskUnitOfWork;
 import com.mil0812.eventsplanner.persistence.unit_of_work.impl.UserUnitOfWork;
-import java.io.IOException;
+import com.mil0812.eventsplanner.presentation.utils.AlertUtil;
+import com.mil0812.eventsplanner.presentation.utils.CurrentUser;
+import com.mil0812.eventsplanner.presentation.utils.SceneSwitcher;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -26,7 +26,7 @@ import org.springframework.stereotype.Component;
 public class EnterPageController {
 
   private final UserRepository userRepository;
-  private final UserUnitOfWork userUnitOfWork;
+  private final SceneSwitcher sceneSwitcher;
 
   @FXML
   private Button enterButton;
@@ -48,37 +48,29 @@ public class EnterPageController {
 
   private List usernameErrorsList;
   private List passwordErrorsList;
-
-  private String name;
+  private User foundUser;
 
   @Autowired
-  public EnterPageController(UserRepository userRepository, UserUnitOfWork userUnitOfWork) {
+  public EnterPageController(UserRepository userRepository, DayTaskUnitOfWork dayTaskUnitOfWork,
+      UserUnitOfWork userUnitOfWork,
+      SceneSwitcher sceneSwitcher) {
     this.userRepository = userRepository;
-    this.userUnitOfWork = userUnitOfWork;
+    this.sceneSwitcher = sceneSwitcher;
   }
 
   @FXML
   void initialize() {
 
     enterButton.setOnAction(actionEvent -> checkLogInData());
-
     registrationLink.setOnAction(actionEvent -> openSignUpPage());
   }
 
   private void openSignUpPage() {
     registrationLink.getScene().getWindow().hide();
-
-    try {
-      SpringFXMLLoader fxmlLoader = Main.springContext.getBean(SpringFXMLLoader.class);
-      Parent root = (Parent) fxmlLoader.load("/com/mil0812/eventsplanner/view/registration-view.fxml");
-      Stage stage = new Stage();
-      stage.setScene(new Scene(root));
-      stage.showAndWait();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+    sceneSwitcher.switchScene
+        ("/com/mil0812/eventsplanner/view/registration-view.fxml",
+            "/com/mil0812/eventsplanner/style/menu.css");
   }
-
 
   private void checkLogInData() {
     String usernameText = usernameTextField.getText().trim();
@@ -95,8 +87,8 @@ public class EnterPageController {
       Optional<User> optionalUser = userRepository.findByLogin(usernameText);
 
       if (optionalUser.isPresent()) {
-        User user = optionalUser.get();
-        if (user.password().equals(passwordText)) {
+        foundUser = optionalUser.get();
+        if (foundUser.password().equals(passwordText)) {
           // Successful login
           logInUser();
         } else {
@@ -115,67 +107,18 @@ public class EnterPageController {
   }
 
   private void showErrorAlert(String message) {
-    Alert alert = new Alert(Alert.AlertType.ERROR);
-    alert.setTitle("Помилка");
-    alert.setHeaderText(null);
-    alert.setContentText(message);
-    alert.showAndWait();
+    AlertUtil.showInfoAlert("Помилка входу... Перевірте ще раз дані");
   }
 
   private void logInUser() {
-    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    alert.setTitle("Успішна авторизація");
-    alert.setHeaderText(null);
-    alert.setContentText("Ви успішно увійшли в аккаунт!");
-    alert.showAndWait();
+    AlertUtil.showInfoAlert("Ви успішно увійшли в аккаунт!");
+
+    //Setting default user
+    CurrentUser.getInstance().setCurrentUser(foundUser);
+
+    registrationLink.getScene().getWindow().hide();
+    sceneSwitcher.switchScene
+        ("/com/mil0812/eventsplanner/view/main-view.fxml",
+            "/com/mil0812/eventsplanner/style/menu.css");
   }
 }
-
-/*
-      if (!(userExists(usernameText, passwordText))) {
-        usernameErrorsList.add(userDoesNotExistError);
-      } else {
-        usernameErrorsList.remove(userDoesNotExistError);
-      }
-      passwordIsCorrect();
-    }
-    // logInUser(usernameText, passwordText);
-
-    else {
-      System.out.println("Заповніть поля, будь ласка");
-    }
-  }*/
-
- /* private boolean userExists(String username, String password) {
-    String receivedFirstName = "";
-
-    User user = new User(receivedFirstName, username, password);
-    userUnitOfWork.getEntity(user);
-    user.setUsername(username);
-    user.setPassword(password);
-    ResultSet result = databaseHandler.getUser(user);
-
-    int counter = 0;
-
-    // проходимося по користувачам: перевіряємо, чи є такий
-
-    try {
-      while (result.next()) {
-        name = result.getString("username");
-        System.out.println("User name is " + name);
-        counter++;
-      }
-    } catch (SQLException e) {
-      e.printStackTrace();
-    }
-    if (counter >= 1) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  private boolean passwordIsCorrect() {
-
-    return false;
-  }*/

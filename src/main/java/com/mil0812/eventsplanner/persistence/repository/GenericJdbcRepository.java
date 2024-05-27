@@ -1,14 +1,43 @@
 
-package com.mil0812.persistence.repository;
+package com.mil0812.eventsplanner.persistence.repository;
 
 import static java.lang.StringTemplate.STR;
 
-import com.mil0812.persistence.connection.ConnectionManager;
-import com.mil0812.persistence.entity.Entity;
-import com.mil0812.persistence.exception.EntityNotFound;
-import com.mil0812.persistence.exception.ErrorOnDelete;
-import com.mil0812.persistence.exception.ErrorOnUpdate;
-import com.mil0812.persistence.repository.mappers.RowMapper;
+import com.mil0812.eventsplanner.persistence.connection.ConnectionManager;
+import com.mil0812.eventsplanner.persistence.entity.Entity;
+import com.mil0812.eventsplanner.persistence.exception.EntityNotFound;
+import com.mil0812.eventsplanner.persistence.exception.ErrorOnDelete;
+import com.mil0812.eventsplanner.persistence.exception.ErrorOnUpdate;
+import com.mil0812.eventsplanner.persistence.repository.mappers.RowMapper;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Types;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Set;
+import java.util.UUID;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import static java.lang.StringTemplate.STR;
+
+import com.mil0812.eventsplanner.persistence.connection.ConnectionManager;
+import com.mil0812.eventsplanner.persistence.entity.Entity;
+import com.mil0812.eventsplanner.persistence.exception.EntityNotFound;
+import com.mil0812.eventsplanner.persistence.exception.ErrorOnDelete;
+import com.mil0812.eventsplanner.persistence.exception.ErrorOnUpdate;
+import com.mil0812.eventsplanner.persistence.repository.mappers.RowMapper;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -88,6 +117,9 @@ public abstract class GenericJdbcRepository<T extends Entity> implements Reposit
         """;
 
     try (PreparedStatement statement = connection.prepareStatement(sql)) {
+/*
+      logger.info(STR."~sql = \{sql}");
+      logger.info(STR."~prepared statement = \{statement}");*/
 
       ResultSet resultSet = statement.executeQuery();
       Set<T> entities = new LinkedHashSet<>();
@@ -96,8 +128,10 @@ public abstract class GenericJdbcRepository<T extends Entity> implements Reposit
       }
       return entities;
     } catch (SQLException throwables) {
+      System.out.println(STR."Exception is \{throwables}");
       throw new EntityNotFound(
           STR."Помилка при отриманні всіх запитів з таблиці: \{tableName}");
+
     }
   }
 
@@ -109,7 +143,7 @@ public abstract class GenericJdbcRepository<T extends Entity> implements Reposit
         """;
 
     try (Connection connection = connectionManager.get();
-        PreparedStatement statement = connection.prepareStatement(sql)) {
+      PreparedStatement statement = connection.prepareStatement(sql)) {
       ResultSet resultSet = statement.executeQuery();
       Set<T> entities = new LinkedHashSet<>();
       while (resultSet.next()) {
@@ -127,6 +161,15 @@ public abstract class GenericJdbcRepository<T extends Entity> implements Reposit
     return findAll(offset, limit, "id", true);
   }
 
+  /**
+   * Знаходить всі об'єкти класу, використовуючи такі параметри:
+   *
+   * @param offset     - зсув відносно початку запиту
+   * @param limit      - максимальна кількість результатів. що мають бути повернуті
+   * @param sortColumn - стовпець, за яким відбувається сортування
+   * @param ascending  - 1 - ASK, 2 - DESK
+   * @return - список знайдених об'єктів
+   */
   @Override
   public Set<T> findAll(int offset, int limit, String sortColumn, boolean ascending) {
     return findAll(offset, limit, sortColumn, ascending, new HashMap<>());
@@ -224,7 +267,7 @@ public abstract class GenericJdbcRepository<T extends Entity> implements Reposit
     String attributesString = String.join(", ", attributes);
     String placeholders =
         Stream.generate(() -> "?")
-            .limit(attributes.size())
+            .limit(attributes.size() + 1)
             .collect(Collectors.joining(", "));
     String sql =
         STR."""
@@ -233,8 +276,8 @@ public abstract class GenericJdbcRepository<T extends Entity> implements Reposit
                 VALUES (\{placeholders})
         """;
 
-    if (attributes.stream().anyMatch(a -> a.equals("date_of_test"))) {
-      values.put("date_of_test", LocalDateTime.now());
+    if (attributes.stream().anyMatch(a -> a.equals("created_at"))) {
+      values.put("created_at", LocalDateTime.now());
     }
     int idIndex = 0;
 
@@ -245,7 +288,7 @@ public abstract class GenericJdbcRepository<T extends Entity> implements Reposit
     var attributes = values.keySet();
     String attributesString =
         attributes.stream()
-            .filter(a -> !a.equals("date_of_test") && !a.equals("id"))
+            .filter(a -> !a.equals("created_at") && !a.equals("id"))
             .map(a -> STR."\{a} = ?")
             .collect(Collectors.joining(", "));
     String sql = STR."""
@@ -255,9 +298,6 @@ public abstract class GenericJdbcRepository<T extends Entity> implements Reposit
                          """;
     logger.info(STR."SQL-запит на оновлення: \{sql}");
 
-    if (attributes.stream().anyMatch(a -> a.equals("date_of_test"))) {
-      values.put("date_of_test", LocalDateTime.now());
-    }
 
     int idIndex = attributes.size();
 
@@ -284,11 +324,15 @@ public abstract class GenericJdbcRepository<T extends Entity> implements Reposit
   public Set<T> save(Collection<T> entities) {
     Set<T> results;
     List<Map<String, Object>> listOfValues = new ArrayList<>(new LinkedHashSet<>());
+    boolean allNew = true; // Змінна для перевірки, чи всі об'єкти нові
 
     for (var entity : entities) {
       var values = tableValues(entity);
       values.put("id", Objects.isNull(entity.id()) ? UUID.randomUUID() : entity.id());
+
       listOfValues.add(values);
+      logger.info(STR."~ id = \{entity.id()}");
+      logger.info(STR."~ list of values = \{listOfValues}");
     }
 
     if (entities.stream().allMatch(e -> Objects.isNull(e.id()))) {
@@ -298,6 +342,7 @@ public abstract class GenericJdbcRepository<T extends Entity> implements Reposit
     }
     return results;
   }
+
 
   protected Set<T> batchInsert(List<Map<String, Object>> listOfValues) {
     var attributes = listOfValues.getFirst().keySet();
@@ -313,9 +358,11 @@ public abstract class GenericJdbcRepository<T extends Entity> implements Reposit
                 VALUES (\{placeholders})
         """;
 
-    if (attributes.stream().anyMatch(a -> a.equals("date_of_test"))) {
+   /* logger.info(STR."~ insert sql = \{sql}");*/
+
+    if (attributes.stream().anyMatch(a -> a.equals("created_at"))) {
       listOfValues.forEach(values -> {
-        values.put("date_of_test", LocalDateTime.now());
+        values.put("created_at", LocalDateTime.now()); // createdAt
       });
     }
 
@@ -326,7 +373,7 @@ public abstract class GenericJdbcRepository<T extends Entity> implements Reposit
     var attributes = listOfValues.getFirst().keySet();
     String attributesString =
         attributes.stream()
-            .filter(a -> !a.equals("date_of_test") && !a.equals("id"))
+            .filter(a -> !a.equals("id"))
             .map(a -> STR."\{a} = ?")
             .collect(Collectors.joining(", "));
     String sql =
@@ -335,12 +382,7 @@ public abstract class GenericJdbcRepository<T extends Entity> implements Reposit
                          SET \{attributesString}
                        WHERE id = ?
                     """;
-
-    if (attributes.stream().anyMatch(a -> a.equals("date_of_test"))) {
-      listOfValues.forEach(values -> {
-        values.put("date_of_test", LocalDateTime.now());
-      });
-    }
+    logger.info(STR."~ sql запит на оновлення - \{sql}");
 
     return batchExecute(listOfValues, sql, "Помилка при оновленні існуючого запису в таблиці...");
   }
@@ -354,16 +396,21 @@ public abstract class GenericJdbcRepository<T extends Entity> implements Reposit
       connection.setAutoCommit(false);
 
       try (PreparedStatement statement = connection.prepareStatement(sql)) {
+        logger.info("batch execute list of values cycle is started!");
         for (var values : listOfValues) {
           for (int i = 0; i < values.size(); i++) {
             statementSetter(values, i, statement);
+            logger.info(STR."batchExecute - values cycle - element \{i}, values \{values}");
           }
+          logger.info(STR."~ statement = \{statement}");
           statement.addBatch();
         }
+        logger.info("batch execute list of values cycle is finished!");
 
         statement.executeBatch();
 
         results = getEntitiesAfterBatchExecute(listOfValues, connection);
+        logger.info(STR."~ results = \{results}");
 
         if (results.isEmpty() || listOfValues.size() != results.size()) {
           connection.rollback();
@@ -399,16 +446,16 @@ public abstract class GenericJdbcRepository<T extends Entity> implements Reposit
     List<String> ids = listOfValues.stream().map(values -> {
       UUID id = (UUID) values.stream()
           .filter(UUID.class::isInstance)
-          .findFirst()
+          .reduce((first, second) -> second) //для знаходження останнього елемента типу UUID
           .orElseThrow(() -> new NoSuchElementException("UUID не знайдено..."));
 
+      logger.info(STR."~ id = \{id}");
       return STR."'\{id.toString()}'";
     }).toList();
 
     results = findAllWhere(STR."id IN(\{String.join(", ", ids)})", connection);
     return results;
   }
-
 
   @Override
   public boolean delete(UUID id) {

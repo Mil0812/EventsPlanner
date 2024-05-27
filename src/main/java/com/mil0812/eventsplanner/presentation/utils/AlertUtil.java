@@ -1,6 +1,11 @@
 package com.mil0812.eventsplanner.presentation.utils;
 
-public class Alert{
+import javafx.scene.control.Alert;
+
+/**
+ * Клас для показу сповіщень
+ */
+public class AlertUtil {
 
   public static void showErrorAlert(String message) {
     showAlert(Alert.AlertType.ERROR, "Помилка", message);

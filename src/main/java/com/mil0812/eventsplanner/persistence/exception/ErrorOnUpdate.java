@@ -1,4 +1,4 @@
-package com.mil0812.persistence.exception;
+package com.mil0812.eventsplanner.persistence.exception;
 
 public class ErrorOnUpdate  extends RuntimeException{
 

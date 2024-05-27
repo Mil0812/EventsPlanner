@@ -17,3 +17,43 @@
 .dark-bg-color {
   -fx-background-color: #282A34;
 }
+
+.brown-label{
+  -fx-alignment: center;
+  -fx-content-display: center;
+  -fx-font: 25px "beer money";
+  -fx-text-fill: #927168;
+}
+
+.plain-text{
+  -fx-font: 17px "arial";
+  -fx-text-fill: #282A34;
+}
+
+.task-label{
+  -fx-font: 14px "beer money";
+  -fx-text-fill: #219F85;
+}
+
+.container-with-border {
+  -fx-border-color: #927168;
+  -fx-border-width: 3px;
+  -fx-border-radius: 5;
+}
+.my-button{
+  -fx-background-color: #219F85;
+  -fx-text-fill: #E9DCD8;
+  -fx-cursor: hand;
+}
+.reversed-button{
+  -fx-background-color: #E9DCD8;
+  -fx-text-fill: #219F85;
+  -fx-border-color: #219F85;
+  -fx-border-width: 2px;
+  -fx-cursor: hand;
+}
+.selected-image {
+  -fx-effect: dropshadow(three-pass-box, #927168, 10, 0, 0, 0);
+  -fx-border-color: #927168;
+  -fx-border-width: 2px;
+}

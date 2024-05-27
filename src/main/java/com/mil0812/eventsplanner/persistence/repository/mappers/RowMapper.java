@@ -1,4 +1,4 @@
-package com.mil0812.persistence.repository.mappers;
+package com.mil0812.eventsplanner.persistence.repository.mappers;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

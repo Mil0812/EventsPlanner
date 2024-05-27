@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
+<?import javafx.scene.layout.StackPane?>
 
-</AnchorPane>
+<?import javafx.scene.layout.VBox?>
+<StackPane prefHeight="412.0" prefWidth="600.0" maxWidth="400.0"
+  xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" styleClass="container-with-border"
+  fx:controller="com.mil0812.eventsplanner.presentation.controllers.ProfileViewController">
+  <VBox alignment="CENTER">
+            <ImageView fx:id="avatarImage" fitHeight="200.0" fitWidth="200.0"
+              nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label fx:id="nameLabel"
+              text="~NAME~" styleClass="brown-label">
+            </Label>
+  </VBox>
+</StackPane>

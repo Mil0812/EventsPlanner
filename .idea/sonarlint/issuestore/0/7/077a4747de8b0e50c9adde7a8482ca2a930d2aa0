@@ -1,5 +1,7 @@
 
+G	java:S106"+Replace this use of System.out by a logger.(Ú¤›ş8ŠºêÍú1
+G	java:S106%"+Replace this use of System.out by a logger.(ÿòÄÉ8ŒºêÍú1
 J
-java:S11850"(Remove this method to simply inherit it.(°å½œşÿÿÿÿ8­‰¹ù1
+java:S11856"(Remove this method to simply inherit it.(°å½œşÿÿÿÿ8‘ºêÍú1
 E
-java:S11855"(Remove this method to simply inherit it.(Ì½Å•8’­‰¹ù1
+java:S1185;"(Remove this method to simply inherit it.(Ì½Å•8“ºêÍú1

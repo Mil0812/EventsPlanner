@@ -1,6 +1,6 @@
-package com.mil0812.persistence.repository;
+package com.mil0812.eventsplanner.persistence.repository;
 
-import com.mil0812.persistence.entity.Entity;
+import com.mil0812.eventsplanner.persistence.entity.Entity;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Optional;

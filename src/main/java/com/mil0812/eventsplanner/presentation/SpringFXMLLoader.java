@@ -1,8 +1,9 @@
-package com.mil0812.eventsplanner.presentation.controllers;
+package com.mil0812.eventsplanner.presentation;
 
 import java.io.IOException;
 import java.io.InputStream;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -18,10 +19,10 @@ public class SpringFXMLLoader {
     this.context = context;
   }
 
-  public Object load(String fxmlPath) throws IOException {
+  public Parent load(String fxmlPath) throws IOException {
+    FXMLLoader loader = new FXMLLoader();
+    loader.setControllerFactory(context::getBean);
     try (InputStream fxmlStream = getClass().getResourceAsStream(fxmlPath)) {
-      FXMLLoader loader = new FXMLLoader();
-      loader.setControllerFactory(context::getBean);
       return loader.load(fxmlStream);
     }
   }

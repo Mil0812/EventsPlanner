@@ -1,4 +1,4 @@
-package com.mil0812.eventsplanner.persistence.unitOfWork;
+package com.mil0812.eventsplanner.persistence.unit_of_work;
 
 import java.util.Set;
 import java.util.UUID;

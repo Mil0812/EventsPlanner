@@ -2,35 +2,68 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="922.0" styleClass="main-pane"
-  stylesheets="@../style/main_menu.css" xmlns="http://javafx.com/javafx/21"
-  xmlns:fx="http://javafx.com/fxml/1"
-  fx:controller="com.mil0812.eventsplanner.presentation.controllers.MainMenuController">
+<?import javafx.scene.control.Tooltip?>
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21"
+  xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mil0812.eventsplanner.presentation.controllers.MainMenuController"
+  styleClass="main-pane">
   <children>
-    <AnchorPane prefHeight="493.0" prefWidth="922.0">
-      <children>
-        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="108.0" prefWidth="922.0"
-          text="Quiz Master" textFill="WHITE">
-          <font>
-            <Font size="20.0"/>
-          </font>
-        </Label>
-      </children>
-    </AnchorPane>
-    <HBox alignment="BOTTOM_CENTER" layoutY="490.0" nodeOrientation="LEFT_TO_RIGHT"
-      prefHeight="108.0" prefWidth="922.0" spacing="10" styleClass="side-panel"
-      stylesheets="@../style/main_menu.css">
-      <effect>
-        <DropShadow/>
-      </effect>
-      <Button mnemonicParsing="false" styleClass="button_custom" text="Button1"/>
-      <Button mnemonicParsing="false" styleClass="button_custom" text="Button2"/>
-      <Button mnemonicParsing="false" styleClass="button_custom" text="Button3"/>
+    <HBox alignment="BOTTOM_CENTER" layoutY="490.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="108.0"
+      prefWidth="922.0" spacing="10" styleClass="side-panel">
+      <Button fx:id="calendarButton" styleClass="button-custom">
+        <tooltip>
+          <Tooltip text="Переглянути нещодавні події" />
+        </tooltip>
+        <graphic>
+          <ImageView fx:id="calendarButtonImage" />
+        </graphic>
+      </Button>
+      <Button fx:id="eventsButton" styleClass="button-custom">
+        <tooltip>
+          <Tooltip text="Створити подію" />
+        </tooltip>
+        <graphic>
+          <ImageView fx:id="eventsButtonImage" />
+        </graphic>
+      </Button>
+      <Button fx:id="dayListButton" styleClass="button-custom">
+        <tooltip>
+          <Tooltip text="ToDoList на сьогодні" />
+        </tooltip>
+        <graphic>
+          <ImageView fx:id="dayListButtonImage" />
+        </graphic>
+      </Button>
+      <Button fx:id="profileButton" styleClass="button-custom">
+        <tooltip>
+          <Tooltip text="Мій профіль" />
+        </tooltip>
+        <graphic>
+          <ImageView fx:id="avatarButtonImage"/>
+        </graphic>
+      </Button>
+      <Button fx:id="exitButton" styleClass="button-custom">
+        <tooltip>
+          <Tooltip text="Вийти" />
+        </tooltip>
+        <graphic>
+          <ImageView fx:id="exitButtonImage" />
+        </graphic>
+      </Button>
     </HBox>
+  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="55.0" prefWidth="922.0" text="~ Events Planner ~" styleClass="my-label">
+  </Label>
+      <AnchorPane layoutY="74.0" prefHeight="397.0" prefWidth="922.0">
+         <children>
+            <StackPane fx:id="contentArea" maxHeight="1.7976931348623157E308"
+              maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
   </children>
 </AnchorPane>
