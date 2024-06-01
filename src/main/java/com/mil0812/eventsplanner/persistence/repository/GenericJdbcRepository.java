@@ -101,6 +101,7 @@ public abstract class GenericJdbcRepository<T extends Entity> implements Reposit
 
   @Override
   public Set<T> findAllWhere(String whereQuery) {
+    logger.info("~ 1 step");
     try (Connection connection = connectionManager.get()) {
       return findAllWhere(whereQuery, connection);
     } catch (SQLException throwables) {
@@ -110,22 +111,28 @@ public abstract class GenericJdbcRepository<T extends Entity> implements Reposit
   }
 
   private Set<T> findAllWhere(String whereQuery, Connection connection) {
+    logger.info("~ 2 step");
+    logger.info(STR."connection = \{connection}");
+
     final String sql = STR."""
             SELECT *
               FROM \{tableName}
              WHERE \{whereQuery}
         """;
 
+    logger.info(STR."sql - \{sql}");
+
     try (PreparedStatement statement = connection.prepareStatement(sql)) {
-/*
+
       logger.info(STR."~sql = \{sql}");
-      logger.info(STR."~prepared statement = \{statement}");*/
+      logger.info(STR."~prepared statement = \{statement}");
 
       ResultSet resultSet = statement.executeQuery();
       Set<T> entities = new LinkedHashSet<>();
       while (resultSet.next()) {
         entities.add(rowMapper.mapRow(resultSet));
       }
+      logger.info(STR."entities - \{entities}");
       return entities;
     } catch (SQLException throwables) {
       System.out.println(STR."Exception is \{throwables}");

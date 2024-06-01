@@ -2,6 +2,7 @@ package com.mil0812.eventsplanner.presentation.controllers;
 
 import com.mil0812.eventsplanner.Main;
 import com.mil0812.eventsplanner.persistence.entity.impl.DayTask;
+import com.mil0812.eventsplanner.persistence.repository.interfaces.DayTaskRepository;
 import com.mil0812.eventsplanner.persistence.unit_of_work.impl.DayTaskUnitOfWork;
 import com.mil0812.eventsplanner.presentation.utils.AlertUtil;
 import com.mil0812.eventsplanner.presentation.utils.CurrentUser;
@@ -48,10 +49,13 @@ public class DayTasksController {
   private int taskCount = 0;
 
   private final DayTaskUnitOfWork dayTaskUnitOfWork;
+  private final DayTaskRepository dayTaskRepository;
 
   @Autowired
-  public DayTasksController(DayTaskUnitOfWork dayTaskUnitOfWork) {
+  public DayTasksController(DayTaskUnitOfWork dayTaskUnitOfWork,
+      DayTaskRepository dayTaskRepository) {
     this.dayTaskUnitOfWork = dayTaskUnitOfWork;
+    this.dayTaskRepository = dayTaskRepository;
   }
 
 
@@ -61,15 +65,17 @@ public class DayTasksController {
     //Отримуємо id поточного користувача
     currentUserId = CurrentUser.getInstance().getCurrentUser().id();
 
-    checkCreatedTasks();
     addTaskButton.setOnAction(actionEvent -> addTask());
-//    viewTasksButton.setOnAction(actionEvent -> viewAllTasks());
+    viewTasksButton.setOnAction(actionEvent ->  checkCreatedTasks());
     controlInputLLength();
   }
 
   private void checkCreatedTasks() {
-    dayTaskUnitOfWork.getEntities();
+    Main.logger.info("find All Started!");
+    dayTaskRepository.findAllWhere(STR."user_id IN('\{currentUserId}')");
+
   }
+
 
   private void addTask() {
     taskText = taskTextField.getText();

@@ -3,14 +3,8 @@ package com.mil0812.eventsplanner;
 import com.mil0812.eventsplanner.persistence.ApplicationConfig;
 import com.mil0812.eventsplanner.persistence.connection.ConnectionManager;
 import com.mil0812.eventsplanner.persistence.connection.DatabaseInitializer;
-import com.mil0812.eventsplanner.persistence.entity.impl.DayTask;
-import com.mil0812.eventsplanner.persistence.unit_of_work.impl.DayTaskUnitOfWork;
 import com.mil0812.eventsplanner.presentation.SpringFXMLLoader;
-import com.mil0812.eventsplanner.presentation.controllers.MainMenuController;
-import com.mil0812.eventsplanner.presentation.utils.AlertUtil;
-import java.util.UUID;
 import javafx.application.Application;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -28,7 +22,7 @@ public class Main extends Application {
 
         SpringFXMLLoader loader = springContext.getBean(SpringFXMLLoader.class);
         Scene scene = new Scene(
-            loader.load("/com/mil0812/eventsplanner/view/enter-view.fxml"), 922.0, 600.0);
+            loader.load("/com/mil0812/eventsplanner/view/enter-view.fxml"), 900.0, 600.0);
 
         stage.setTitle("Events Planner");
         stage.setScene(scene);

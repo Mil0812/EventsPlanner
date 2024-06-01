@@ -33,10 +33,10 @@ implements DayTaskRepository {
     return findBy("completeness", completeness);
   }
 
+
   @Override
-  public Set<DayTask> findAll(int offset, int limit, String sortColumn, boolean ascending,
-      Map<String, Object> filters, String where) {
-    return super.findAll(offset, limit, sortColumn, ascending, filters, where);
+  public Set<DayTask> findAllWhere(String whereQuery) {
+    return super.findAllWhere(whereQuery);
   }
 
   @Override
